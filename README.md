@@ -95,9 +95,16 @@ A custom workbook was created in Microsoft Sentinel to display a global attack m
 
 ![Attack Map](screenshots/attack-map.png)
 
+
 ### 📊 KQL Query
 
-![KQL Query](screenshots/kql-query.png)
+```kql
+SecurityEvent
+| where EventID == 4625
+| project TimeGenerated, Account, IPAddress, Computer
+| order by TimeGenerated desc
+```
+
 
 ### 📑 Failed Login Logs
 
